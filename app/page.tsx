@@ -56,7 +56,7 @@ export default function QuickQLanding() {
       <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#A3E635]/5 via-transparent to-transparent" />
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center gap-2 lg:gap-4">
             <Badge className="mb-6 bg-[#A3E635]/20 text-[#A3E635] border-[#A3E635]/30 hover:bg-[#A3E635]/30">
               <Rocket className="w-4 h-4 mr-2" />🚀 Now in Early Access
             </Badge>
@@ -70,9 +70,9 @@ export default function QuickQLanding() {
               process of early-stage YC AI startups.
             </p>
 
-            <Card className="max-w-md mx-auto bg-gray-900/50 border-gray-800 backdrop-blur-sm">
+            <Card className="max-w-md mx-auto bg-gray-900/50 border-gray-800 backdrop-blur-sm w-full">
               <CardContent className="p-6">
-                <form onSubmit={(e) => handleWaitlistSubmit(e)} className="space-y-4">
+                <form onSubmit={(e) => handleWaitlistSubmit(e)} className="space-y-6">
                   <Input
                     type="email"
                     placeholder="Enter your email"
@@ -143,14 +143,14 @@ export default function QuickQLanding() {
         </div>
       </section> */}
 
-      {/* Key Features with Screenshots */}
-      <section className="py-20 bg-gray-950/50">
+      {/* Key Features with Screenshots - How It Works */}
+      <section className="bg-gray-950/50 min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100">Key Features</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 lg:mb-32 bg-gradient-to-r from-gray-100 via-[#A3E635] to-gray-100 bg-clip-text text-transparent">How It Works</h2>
 
-          <div className="space-y-20 max-w-6xl mx-auto">
+          <div className="space-y-20 max-w-6xl mx-auto flex flex-col items-center justify-center gap-12 lg:gap-20">
             {/* Section 1: YC Startup Job Listings - Screenshot LEFT, Text RIGHT */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
               <div className="order-1 lg:order-1">
                 <div className="relative mx-auto w-64 h-[520px]">
                   {/* iPhone Frame */}
@@ -214,7 +214,13 @@ export default function QuickQLanding() {
                 </div>
               </div>
               <div className="order-2 lg:order-2">
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">YC Startup Job Listings</h3>
+                <div className="relative w-16 h-16 bg-[#A3E635]/20 rounded-full flex items-center justify-center mb-4">
+                  <Search className="w-8 h-8 text-[#A3E635]" />
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#A3E635] rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-sm font-bold">1</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">Browse Listings</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
@@ -222,7 +228,7 @@ export default function QuickQLanding() {
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Modeled on real YC roles</p>
+                    <p className="text-gray-300">Modeled on real YC-backed AI startup roles</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
@@ -233,9 +239,15 @@ export default function QuickQLanding() {
             </div>
 
             {/* New Section: Dive Deep into the Role - Screenshot RIGHT, Text LEFT */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
               <div className="order-2 lg:order-1">
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">Dive Deep into the Role</h3>
+                <div className="relative w-16 h-16 bg-[#A3E635]/20 rounded-full flex items-center justify-center mb-4">
+                  <Target className="w-8 h-8 text-[#A3E635]" />
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#A3E635] rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-sm font-bold">2</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">Select Target</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
@@ -249,7 +261,7 @@ export default function QuickQLanding() {
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Easy access to apply or learn more</p>
+                    <p className="text-gray-300">Easy access to start your mock interview</p>
                   </div>
                 </div>
               </div>
@@ -307,7 +319,7 @@ export default function QuickQLanding() {
             </div>
 
             {/* Section 2: Mock Interview Simulation - Screenshot LEFT, Text RIGHT */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
               <div className="order-1 lg:order-1">
                 <div className="relative mx-auto w-64 h-[520px]">
                   {/* iPhone Frame */}
@@ -360,6 +372,12 @@ export default function QuickQLanding() {
                 </div>
               </div>
               <div className="order-2 lg:order-2">
+                <div className="relative w-16 h-16 bg-[#A3E635]/20 rounded-full flex items-center justify-center mb-4">
+                  <MessageSquare className="w-8 h-8 text-[#A3E635]" />
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#A3E635] rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-sm font-bold">3</span>
+                  </div>
+                </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">Mock Interview Simulation</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -368,30 +386,36 @@ export default function QuickQLanding() {
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Real YC-style questions</p>
+                    <p className="text-gray-300">Real early-stage YC-backed AI startup questions</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Select target startup & role</p>
+                    <p className="text-gray-300">Get feedback after each answer</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Section 3: Real-Time Feedback & Performance Analytics - Screenshot RIGHT, Text LEFT */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
               <div className="order-2 lg:order-1">
+                <div className="relative w-16 h-16 bg-[#A3E635]/20 rounded-full flex items-center justify-center mb-4">
+                  <TrendingUp className="w-8 h-8 text-[#A3E635]" />
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#A3E635] rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-sm font-bold">4</span>
+                  </div>
+                </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">
-                  Real-Time Feedback & Performance Analytics
+                  Review & Improve
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Instant scoring</p>
+                    <p className="text-gray-300">Instant feedback on your performance</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Pacing insights</p>
+                    <p className="text-gray-300">Get actionable steps to improve</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
@@ -463,9 +487,9 @@ export default function QuickQLanding() {
       </section>
 
       {/* Why We're Unique */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100">Why We're Unique</h2>
+      <section className="min-h-screen flex items-center justify-center">
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-100 via-[#A3E635] to-gray-100 bg-clip-text text-transparent">Why We're Unique</h2>
 
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex items-start space-x-4">
@@ -484,7 +508,7 @@ export default function QuickQLanding() {
               <CheckCircle className="w-6 h-6 text-[#A3E635] mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-100">
-                  Custom-built for full-stack web + AI engineers
+                  Custom-built for full-stack web + native mobile + AI engineers
                 </h3>
                 <p className="text-gray-400">
                   Tailored specifically for the skills and challenges facing modern AI-focused developers.
@@ -507,30 +531,31 @@ export default function QuickQLanding() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-20 bg-gray-950/50">
+      {/* Combined Social Proof + CTA */}
+      <section className="min-h-screen flex items-center justify-center bg-gray-950">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
-            <Users className="w-16 h-16 text-[#A3E635] mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
-              Be one of the first 200 engineers on the waitlist!
-            </h2>
-            <p className="text-xl text-gray-200">
-              Join an exclusive group of forward-thinking engineers preparing for the future of AI startups.
-            </p>
-          </div>
-        </div>
-      </section>
+            {/* Social Proof with Visual Hierarchy */}
+            <div className="flex items-center justify-center space-x-3 mb-8">
+              <Users className="w-12 h-12 text-[#A3E635]" />
+              <div className="w-px h-12 bg-gray-600"></div>
+              <Zap className="w-12 h-12 text-[#A3E635]" />
+            </div>
+            
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100 leading-tight">
+                Be one of the first 200 engineers
+                <br />
+                <span className="bg-gradient-to-r from-[#A3E635] to-[#A3E635]/80 bg-clip-text text-transparent">
+                  ready to ace YC AI startup interviews
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join an exclusive group of forward-thinking engineers preparing for the future of AI startups.
+              </p>
+            </div>
 
-      {/* Footer CTA */}
-      <section className="py-20 bg-gray-950">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
-            <Zap className="w-12 h-12 text-[#A3E635] mx-auto mb-6" />
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-100">
-              Ready to ace your next YC AI startup interview?
-            </h2>
-
+            {/* Seamless CTA Integration */}
             <Card className="max-w-md mx-auto bg-gray-900/50 border-gray-800 backdrop-blur-sm">
               <CardContent className="p-6">
                 <form onSubmit={(e) => handleWaitlistSubmit(e, true)} className="space-y-4">
@@ -552,6 +577,10 @@ export default function QuickQLanding() {
                 </form>
               </CardContent>
             </Card>
+            
+            <p className="text-sm text-gray-400 mt-6">
+              No spam, ever. Unsubscribe anytime.
+            </p>
           </div>
         </div>
       </section>
@@ -559,7 +588,7 @@ export default function QuickQLanding() {
       {/* Footer */}
       <footer className="py-8 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">© 2024 QuickQ. Built for engineers, by engineers. 🚀</p>
+          <p className="text-gray-400">© 2025 QuickQ. Built for engineers, by engineers. 🚀</p>
         </div>
       </footer>
     </div>
