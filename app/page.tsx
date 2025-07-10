@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Rocket, Search, Target, MessageSquare, TrendingUp, Zap, Users, CheckCircle } from "lucide-react"
+import { Rocket, Search, Target, MessageSquare, TrendingUp, Zap, Users, Sparkles, ArrowRight, Star } from "lucide-react"
 
 export default function QuickQLanding() {
   const [email, setEmail] = useState("")
@@ -113,7 +113,7 @@ export default function QuickQLanding() {
               <div className="order-1 lg:order-1">
                 <div className="relative mx-auto w-72 max-w-full">
                   <img 
-                    src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
+                    src="/mock1.png" 
                     alt="QuickQ mobile app showing YC AI startup job listings interface"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
                   />
@@ -129,15 +129,21 @@ export default function QuickQLanding() {
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-zinc-100">Browse Listings</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-zinc-300">Access to AI-generated engineering engineering job listings</p>
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Sparkles className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
+                    <p className="text-zinc-300">Access to AI-generated engineering job listings</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Star className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Modeled on real YC AI startup engineering roles</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Search className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Filter and search capabilities</p>
                   </div>
                 </div>
@@ -156,17 +162,23 @@ export default function QuickQLanding() {
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-zinc-100">Select Target</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Target className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Detailed job descriptions mirroring real YC AI startup engineering roles</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Sparkles className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">
                       Information about the startup, including its mission and team (AI-generated)
                     </p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <ArrowRight className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Easy access to start your mock interview</p>
                   </div>
                 </div>
@@ -174,7 +186,7 @@ export default function QuickQLanding() {
               <div className="order-1 lg:order-2">
                 <div className="relative mx-auto w-72 max-w-full">
                   <img 
-                    src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
+                    src="/mock2.png" 
                     alt="QuickQ mobile app showing detailed job description and company information"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
                   />
@@ -187,7 +199,7 @@ export default function QuickQLanding() {
               <div className="order-1 lg:order-1">
                 <div className="relative mx-auto w-72 max-w-full">
                   <img 
-                    src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
+                    src="/mock3.png" 
                     alt="QuickQ mobile app showing live mock interview interface with AI founder"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
                   />
@@ -203,15 +215,21 @@ export default function QuickQLanding() {
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-zinc-100">Mock Interview Simulation</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <MessageSquare className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Live mock interviews with an AI 'founder'</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Sparkles className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Real early-stage YC AI startup questions</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Zap className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Get feedback after each answer</p>
                   </div>
                 </div>
@@ -232,15 +250,21 @@ export default function QuickQLanding() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <Zap className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Instant feedback on your performance</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <ArrowRight className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Get actionable steps to improve</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <TrendingUp className="w-3.5 h-3.5 text-zinc-900" />
+                    </div>
                     <p className="text-zinc-300">Improvement suggestions after each session and overall performance</p>
                   </div>
                 </div>
@@ -248,7 +272,7 @@ export default function QuickQLanding() {
               <div className="order-1 lg:order-2">
                 <div className="relative mx-auto w-72 max-w-full">
                   <img 
-                    src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
+                    src="/mock4.png" 
                     alt="QuickQ mobile app showing interview performance analytics and feedback dashboard"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
                   />
@@ -266,7 +290,9 @@ export default function QuickQLanding() {
 
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex items-start space-x-4">
-              <CheckCircle className="w-6 h-6 text-[#A3E635] mt-1 flex-shrink-0" />
+              <div className="w-8 h-8 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-1 flex-shrink-0 shadow-lg">
+                <Sparkles className="w-4 h-4 text-zinc-900" />
+              </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-zinc-100">
                   Closest simulation of real YC AI startup interviews
@@ -278,7 +304,9 @@ export default function QuickQLanding() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <CheckCircle className="w-6 h-6 text-[#A3E635] mt-1 flex-shrink-0" />
+              <div className="w-8 h-8 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-1 flex-shrink-0 shadow-lg">
+                <Star className="w-4 h-4 text-zinc-900" />
+              </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-zinc-100">
                   Custom-built for full-stack web + native mobile + AI engineering roles
@@ -290,7 +318,9 @@ export default function QuickQLanding() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <CheckCircle className="w-6 h-6 text-[#A3E635] mt-1 flex-shrink-0" />
+              <div className="w-8 h-8 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-full flex items-center justify-center mt-1 flex-shrink-0 shadow-lg">
+                <Zap className="w-4 h-4 text-zinc-900" />
+              </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-zinc-100">
                   Designed for rapid, remote prep—start today, get better tomorrow
