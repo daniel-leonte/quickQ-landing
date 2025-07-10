@@ -41,10 +41,10 @@ export default function QuickQLanding() {
         setFeedback("")
       }
 
-      alert("Thanks for joining the waitlist! 🚀")
+      alert("NOT IMPLEMENTED: Thanks for joining the waitlist! 🚀")
     } catch (error) {
       console.log("Waitlist submission:", { email: isFooter ? footerEmail : email, feedback })
-      alert("Thanks for joining the waitlist! 🚀")
+      alert("NOT IMPLEMENTED: Thanks for joining the waitlist! 🚀")
     }
 
     setIsSubmitting(false)
@@ -116,7 +116,6 @@ export default function QuickQLanding() {
                     src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
                     alt="QuickQ mobile app showing YC AI startup job listings interface"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
-                    // style={{ aspectRatio: '9/19.5' }}
                   />
                 </div>
               </div>
@@ -131,11 +130,11 @@ export default function QuickQLanding() {
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-zinc-300">Access to AI-generated job listings</p>
+                    <p className="text-zinc-300">Access to AI-generated engineering engineering job listings</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-zinc-300">Modeled on real YC AI startup roles</p>
+                    <p className="text-zinc-300">Modeled on real YC AI startup engineering roles</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
@@ -158,7 +157,7 @@ export default function QuickQLanding() {
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
-                    <p className="text-zinc-300">Detailed job descriptions mirroring real YC AI startup roles</p>
+                    <p className="text-zinc-300">Detailed job descriptions mirroring real YC AI startup engineering roles</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-[#A3E635] mt-1 flex-shrink-0" />
@@ -178,7 +177,6 @@ export default function QuickQLanding() {
                     src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
                     alt="QuickQ mobile app showing detailed job description and company information"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
-                    // style={{ aspectRatio: '9/19.5' }}
                   />
                 </div>
               </div>
@@ -192,7 +190,6 @@ export default function QuickQLanding() {
                     src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
                     alt="QuickQ mobile app showing live mock interview interface with AI founder"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
-                    // style={{ aspectRatio: '9/19.5' }}
                   />
                 </div>
               </div>
@@ -254,7 +251,6 @@ export default function QuickQLanding() {
                     src="/localhost_3000_(iPhone 14 Pro Max) (1)-portrait.png" 
                     alt="QuickQ mobile app showing interview performance analytics and feedback dashboard"
                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-zinc-800/50 bg-black"
-                    // style={{ aspectRatio: '9/19.5' }}
                   />
                 </div>
               </div>
@@ -285,7 +281,7 @@ export default function QuickQLanding() {
               <CheckCircle className="w-6 h-6 text-[#A3E635] mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-zinc-100">
-                  Custom-built for full-stack web + native mobile + AI engineers
+                  Custom-built for full-stack web + native mobile + AI engineering roles
                 </h3>
                 <p className="text-zinc-400">
                   Tailored specifically for the skills and challenges facing modern AI-focused developers.
