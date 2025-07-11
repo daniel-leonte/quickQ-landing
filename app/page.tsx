@@ -15,45 +15,70 @@ export default function QuickQLanding() {
   const [feedback, setFeedback] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [footerEmail, setFooterEmail] = useState("")
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleWaitlistSubmit = async (e: React.FormEvent, isFooter = false) => {
     e.preventDefault()
+    const currentEmail = isFooter ? footerEmail : email
+    
+    if (!currentEmail) return
+
     setIsSubmitting(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    // POST to placeholder endpoint
     try {
-      await fetch("/api/waitlist", {
+      const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email: isFooter ? footerEmail : email,
+          email: currentEmail,
           feedback: isFooter ? "" : feedback,
         }),
       })
 
-      if (isFooter) {
-        setFooterEmail("")
-      } else {
-        setEmail("")
-        setFeedback("")
+      if (!res.ok) {
+        throw new Error("Failed to join waitlist")
       }
 
-      alert("NOT IMPLEMENTED: Thanks for joining the waitlist! 🚀")
-    } catch (error) {
-      console.log("Waitlist submission:", { email: isFooter ? footerEmail : email, feedback })
-      alert("NOT IMPLEMENTED: Thanks for joining the waitlist! 🚀")
-    }
+      setIsSubmitted(true)
 
-    setIsSubmitting(false)
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        if (isFooter) {
+          setFooterEmail("")
+        } else {
+          setEmail("")
+          setFeedback("")
+        }
+      }, 3000)
+    } catch (err) {
+      console.error(err)
+      // Optional: you could update state to show an error message here
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/50 backdrop-blur-md border-b border-zinc-800/30">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#A3E635] to-[#84cc16] rounded-lg flex items-center justify-center">
+                <Zap className="w-5 h-5 text-zinc-900" />
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-zinc-100 to-[#A3E635] bg-clip-text text-transparent">
+                QuickQ
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#A3E635]/5 via-transparent to-transparent" />
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center gap-2 lg:gap-4">
@@ -72,30 +97,62 @@ export default function QuickQLanding() {
 
             <Card className="max-w-md mx-auto bg-zinc-900/50 border-zinc-800 backdrop-blur-sm w-full">
               <CardContent className="p-6">
-                <form onSubmit={(e) => handleWaitlistSubmit(e)} className="space-y-6">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="bg-black/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-[#A3E635]"
-                  />
-                  <Textarea
-                    placeholder="Any feedback or questions? (optional)"
-                    value={feedback}
-                    onChange={(e) => setFeedback(e.target.value)}
-                    className="bg-black/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-[#A3E635] resize-none"
-                    rows={3}
-                  />
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#A3E635] hover:bg-[#A3E635]/90 text-zinc-900 font-semibold py-3"
-                  >
-                    {isSubmitting ? "Joining..." : "Join the Waitlist"}
-                  </Button>
-                </form>
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center py-8 space-y-4">
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-[#A3E635] rounded-full flex items-center justify-center">
+                        <svg 
+                          className="w-8 h-8 text-zinc-900" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          strokeWidth={3}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
+                      </div>
+                      <div className="absolute inset-0 w-16 h-16 bg-[#A3E635]/20 rounded-full animate-ping"></div>
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold text-white mb-2">You're in! 🚀</h3>
+                      <p className="text-zinc-400 text-sm">We'll notify you when QuickQ launches</p>
+                    </div>
+                  </div>
+                ) : (
+                  <form onSubmit={(e) => handleWaitlistSubmit(e)} className="space-y-6">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="bg-black/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-[#A3E635] transition-all duration-200"
+                    />
+                    <Textarea
+                      placeholder="Any feedback or questions? (optional)"
+                      value={feedback}
+                      onChange={(e) => setFeedback(e.target.value)}
+                      className="bg-black/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-[#A3E635] resize-none transition-all duration-200"
+                      rows={3}
+                    />
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting || !email}
+                      className="w-full bg-[#A3E635] hover:bg-[#A3E635]/90 text-zinc-900 font-semibold py-3 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center space-x-2">
+                          <div className="w-4 h-4 border-2 border-zinc-900/30 border-t-zinc-900 rounded-full animate-spin"></div>
+                          <span>Joining...</span>
+                        </div>
+                      ) : (
+                        "Join the Waitlist"
+                      )}
+                    </Button>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -361,23 +418,55 @@ export default function QuickQLanding() {
             {/* Seamless CTA Integration */}
             <Card className="max-w-md mx-auto bg-zinc-900/50 border-zinc-800 backdrop-blur-sm">
               <CardContent className="p-6">
-                <form onSubmit={(e) => handleWaitlistSubmit(e, true)} className="space-y-4">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={footerEmail}
-                    onChange={(e) => setFooterEmail(e.target.value)}
-                    required
-                    className="bg-black/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-[#A3E635]"
-                  />
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#A3E635] hover:bg-[#A3E635]/90 text-zinc-900 font-semibold py-3"
-                  >
-                    {isSubmitting ? "Reserving..." : "Reserve My Spot"}
-                  </Button>
-                </form>
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center py-6 space-y-4">
+                    <div className="relative">
+                      <div className="w-14 h-14 bg-[#A3E635] rounded-full flex items-center justify-center">
+                        <svg 
+                          className="w-7 h-7 text-zinc-900" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          strokeWidth={3}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
+                      </div>
+                      <div className="absolute inset-0 w-14 h-14 bg-[#A3E635]/20 rounded-full animate-ping"></div>
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-lg font-semibold text-white mb-1">Spot reserved! 🎉</h3>
+                      <p className="text-zinc-400 text-sm">You're in the first 200</p>
+                    </div>
+                  </div>
+                ) : (
+                  <form onSubmit={(e) => handleWaitlistSubmit(e, true)} className="space-y-4">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={footerEmail}
+                      onChange={(e) => setFooterEmail(e.target.value)}
+                      required
+                      className="bg-black/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-[#A3E635] transition-all duration-200"
+                    />
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting || !footerEmail}
+                      className="w-full bg-[#A3E635] hover:bg-[#A3E635]/90 text-zinc-900 font-semibold py-3 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center space-x-2">
+                          <div className="w-4 h-4 border-2 border-zinc-900/30 border-t-zinc-900 rounded-full animate-spin"></div>
+                          <span>Reserving...</span>
+                        </div>
+                      ) : (
+                        "Reserve My Spot"
+                      )}
+                    </Button>
+                  </form>
+                )}
               </CardContent>
             </Card>
             
