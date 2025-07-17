@@ -90,7 +90,7 @@ export default function QuickQLanding() {
               <p className="text-lg md:text-xl lg:text-2xl font-medium text-zinc-300/90 tracking-wide">
                 Join the AI Revolution
               </p>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white via-[#A3E635] to-white bg-clip-text text-transparent leading-[0.9] tracking-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-[#A3E635] to-white bg-clip-text text-transparent leading-[0.9] tracking-tight">
                 Nail Your Startup Interview
               </h1>
             </div>
