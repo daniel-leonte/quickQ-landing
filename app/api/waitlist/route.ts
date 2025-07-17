@@ -23,7 +23,13 @@ export async function POST(request: NextRequest) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ waitlist_id: WAITLIST_ID, email }),
+      body: JSON.stringify({ 
+        waitlist_id: WAITLIST_ID, 
+        email,
+        metadata: {
+          feedback: feedback || ""
+        }
+      }),
     })
 
     const data = await upstreamRes.json()
