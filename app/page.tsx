@@ -86,12 +86,17 @@ export default function QuickQLanding() {
               <Rocket className="w-4 h-4 mr-2" />Now in Early Access
             </Badge>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-zinc-100 via-[#A3E635] to-zinc-100 bg-clip-text text-transparent leading-tight">
-              Join the AI Revolution: Nail Your YC Startup Interview
-            </h1>
+            <div className="text-center space-y-4">
+              <p className="text-lg md:text-xl lg:text-2xl font-medium text-zinc-300/90 tracking-wide">
+                Join the AI Revolution
+              </p>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white via-[#A3E635] to-white bg-clip-text text-transparent leading-[0.9] tracking-tight">
+                Nail Your Startup Interview
+              </h1>
+            </div>
 
             <p className="text-xl md:text-2xl text-zinc-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Interactive mock interviews, tailored question banks, and real-time AI feedback—built to mirror the exact
+              Interactive mock interviews, tailored question banks, and real-time AI feedback. Built to mirror the exact
               process of early-stage YC AI startups.
             </p>
 
