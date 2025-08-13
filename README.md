@@ -2,6 +2,8 @@
 
 A modern landing page for QuickQ, an AI-powered startup interview preparation platform. Built with Next.js 15 and TypeScript.
 
+[Live Demo](https://quick-q-landing.vercel.app/)
+
 ## Tech Stack
 
 - **Next.js 15** - React framework with App Router
